@@ -51,6 +51,10 @@ CREATE TABLE foo(
     -- created is the fourth and final column with type TIMESTAMP. This column also has a default value
     -- which is created by the function CURRENT_TIMESTAMP() if not supplied during creation.
 
+    total INT NOT NULL DEFAULT 1,
+
+    CHECK (total > 0),
+
     -- Here are some additional constraints that the data must relate to:
 
     PRIMARY KEY(foo_id),
